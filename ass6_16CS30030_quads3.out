@@ -1,0 +1,155 @@
+===================================================================================================================
+Symbol Table: Global                                                             Parent: null
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+printStr            integer             function            null           4              0         ptr-to-ST(printStr)
+printInt            integer             function            null           4              4         ptr-to-ST(printInt)
+readInt             integer             function            null           4              8         ptr-to-ST(readInt)
+fib                 integer             function            null           4              12        ptr-to-ST(fib)
+main                integer             function            null           4              16        ptr-to-ST(main)
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: printStr                                                           Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+c                   ptr(char)           param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: printInt                                                           Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+i                   integer             param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: readInt                                                            Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+eP                  ptr(integer)        param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: fib                                                                Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+a                   integer             param               null           4              0         null
+retVal              integer             local               null           4              4         null
+printStr            integer             local               null           4              8         null
+t00                 ptr(char)           temp                "Entered the fib function\n"4              12        null
+t01                 integer             temp                null           4              16        null
+f                   integer             local               1              4              20        null
+t02                 integer             temp                1              4              24        null
+f_1                 integer             local               0              4              28        null
+t03                 integer             temp                0              4              32        null
+i                   integer             local               1              4              36        null
+t04                 integer             temp                1              4              40        null
+temp                integer             local               null           4              44        null
+t05                 integer             temp                null           4              48        null
+t06                 integer             temp                null           4              52        null
+t07                 integer             temp                null           4              56        null
+t08                 integer             temp                null           4              60        null
+t09                 integer             temp                1              4              64        null
+t10                 integer             temp                null           4              68        null
+t11                 integer             temp                null           4              72        null
+t12                 ptr(char)           temp                "\nThe fibonacci number is : "4              76        null
+t13                 integer             temp                null           4              80        null
+printInt            integer             local               null           4              84        null
+t14                 integer             temp                null           4              88        null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: main                                                               Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+retVal              integer             local               null           4              0         null
+printStr            integer             local               null           4              4         null
+t15                 ptr(char)           temp                "enter the i for finding its fibonacci number : "4              8         null
+t16                 integer             temp                null           4              12        null
+i                   integer             local               null           4              16        null
+ep                  integer             local               null           4              20        null
+readInt             integer             local               null           4              24        null
+t17                 ptr(integer)        temp                null           4              28        null
+t18                 integer             temp                null           4              32        null
+t19                 integer             temp                null           4              36        null
+t20                 ptr(char)           temp                "\n\nYou Entered : "4              40        null
+t21                 integer             temp                null           4              44        null
+printInt            integer             local               null           4              48        null
+t22                 integer             temp                null           4              52        null
+t23                 ptr(char)           temp                "\nNow, entering the function to calculate fibonacci numbers for i entered\n"4              56        null
+t24                 integer             temp                null           4              60        null
+j                   integer             local               null           4              64        null
+fib                 integer             local               null           4              68        null
+t25                 integer             temp                null           4              72        null
+t26                 integer             temp                null           4              76        null
+t27                 ptr(char)           temp                "\n\nReturned from the fib function\n\n"4              80        null
+t28                 integer             temp                null           4              84        null
+-------------------------------------------------------------------------------------------------------------------
+
+==============================
+Three address code translation
+------------------------------
+
+fib: 
+
+	   1:	
+	   2:	param t00
+	   3:	t01 = call printStr, 1
+	   4:	t02 = 1
+	   5:	f = t02
+	   6:	t03 = 0
+	   7:	f_1 = t03
+	   8:	t04 = 1
+	   9:	i = t04
+	  10:	if i < a goto 12
+	  11:	goto 20
+	  12:	temp = f
+	  13:	t06 = f + f_1
+	  14:	f = t06
+	  15:	f_1 = temp
+	  16:	t09 = 1
+	  17:	t10 = i + t09
+	  18:	i = t10
+	  19:	goto 10
+	  20:	
+	  21:	param t12
+	  22:	t13 = call printStr, 1
+	  23:	param f
+	  24:	t14 = call printInt, 1
+	  25:	return f
+
+main: 
+
+	  28:	
+	  29:	param t15
+	  30:	t16 = call printStr, 1
+	  31:	t17 = &ep
+	  32:	param t17
+	  33:	t18 = call readInt, 1
+	  34:	i = t18
+	  35:	
+	  36:	param t20
+	  37:	t21 = call printStr, 1
+	  38:	param i
+	  39:	t22 = call printInt, 1
+	  40:	
+	  41:	param t23
+	  42:	t24 = call printStr, 1
+	  43:	param i
+	  44:	t25 = call fib, 1
+	  45:	j = t25
+	  46:	
+	  47:	param t27
+	  48:	t28 = call printStr, 1
+	  49:	return 
+------------------------------

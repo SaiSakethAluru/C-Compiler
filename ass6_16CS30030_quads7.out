@@ -1,0 +1,193 @@
+===================================================================================================================
+Symbol Table: Global                                                             Parent: null
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+printInt            integer             function            null           4              0         ptr-to-ST(printInt)
+printStr            integer             function            null           4              4         ptr-to-ST(printStr)
+readInt             integer             function            null           4              8         ptr-to-ST(readInt)
+main                integer             function            null           4              12        ptr-to-ST(main)
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: printInt                                                           Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+num                 integer             param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: printStr                                                           Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+c                   ptr(char)           param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: readInt                                                            Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+eP                  ptr(integer)        param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: main                                                               Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+retVal              integer             local               null           4              0         null
+n                   integer             local               null           4              4         null
+c                   integer             local               null           4              8         null
+ep                  ptr(integer)        local               null           4              12        null
+printStr            integer             local               null           4              16        null
+t00                 ptr(char)           temp                "------------SUM TEST FILE-------------"4              20        null
+t01                 integer             temp                null           4              24        null
+t02                 ptr(char)           temp                "Here we find the sum of numbers upto a number"4              28        null
+t03                 integer             temp                null           4              32        null
+t04                 ptr(char)           temp                "using ITERATIVE approach thus "4              36        null
+t05                 integer             temp                null           4              40        null
+t06                 ptr(char)           temp                "testing different loops:"4              44        null
+t07                 integer             temp                null           4              48        null
+t08                 ptr(char)           temp                "Enter the number :"4              52        null
+t09                 integer             temp                null           4              56        null
+readInt             integer             local               null           4              60        null
+t10                 ptr(integer)        temp                null           4              64        null
+t11                 integer             temp                null           4              68        null
+t12                 integer             temp                null           4              72        null
+i                   integer             local               0              4              76        null
+t13                 integer             temp                0              4              80        null
+sum                 integer             local               0              4              84        null
+t14                 integer             temp                0              4              88        null
+t15                 integer             temp                1              4              92        null
+t16                 integer             temp                null           4              96        null
+t17                 integer             temp                null           4              100       null
+t18                 integer             temp                null           4              104       null
+t19                 integer             temp                null           4              108       null
+t20                 ptr(char)           temp                ""             4              112       null
+t21                 integer             temp                null           4              116       null
+t22                 ptr(char)           temp                "Sum calculated using FOR LOOP :"4              120       null
+t23                 integer             temp                null           4              124       null
+printInt            integer             local               null           4              128       null
+t24                 integer             temp                null           4              132       null
+t25                 integer             temp                0              4              136       null
+t26                 integer             temp                null           4              140       null
+t27                 integer             temp                1              4              144       null
+t28                 integer             temp                null           4              148       null
+t29                 ptr(char)           temp                ""             4              152       null
+t30                 integer             temp                null           4              156       null
+t31                 ptr(char)           temp                "Sum calculated using WHILE LOOP :"4              160       null
+t32                 integer             temp                null           4              164       null
+t33                 integer             temp                null           4              168       null
+t34                 integer             temp                null           4              172       null
+t35                 integer             temp                null           4              176       null
+t36                 integer             temp                null           4              180       null
+t37                 integer             temp                0              4              184       null
+t38                 integer             temp                null           4              188       null
+t39                 integer             temp                1              4              192       null
+t40                 integer             temp                null           4              196       null
+t41                 ptr(char)           temp                ""             4              200       null
+t42                 integer             temp                null           4              204       null
+t43                 ptr(char)           temp                "Sum calculated using DO-WHILE LOOP :"4              208       null
+t44                 integer             temp                null           4              212       null
+t45                 integer             temp                null           4              216       null
+t46                 integer             temp                null           4              220       null
+t47                 integer             temp                null           4              224       null
+t48                 integer             temp                null           4              228       null
+t49                 ptr(char)           temp                ""             4              232       null
+t50                 integer             temp                null           4              236       null
+-------------------------------------------------------------------------------------------------------------------
+
+==============================
+Three address code translation
+------------------------------
+
+main: 
+
+	   1:	
+	   2:	param t00
+	   3:	t01 = call printStr, 1
+	   4:	
+	   5:	param t02
+	   6:	t03 = call printStr, 1
+	   7:	
+	   8:	param t04
+	   9:	t05 = call printStr, 1
+	  10:	
+	  11:	param t06
+	  12:	t07 = call printStr, 1
+	  13:	
+	  14:	param t08
+	  15:	t09 = call printStr, 1
+	  16:	t10 = &c
+	  17:	param t10
+	  18:	t11 = call readInt, 1
+	  19:	n = t11
+	  20:	t13 = 0
+	  21:	i = t13
+	  22:	t14 = 0
+	  23:	sum = t14
+	  24:	t15 = 1
+	  25:	i = t15
+	  26:	if i <= n goto 31
+	  27:	goto 34
+	  28:	t17 = i
+	  29:	i = i + 1
+	  30:	goto 26
+	  31:	t18 = sum + i
+	  32:	sum = t18
+	  33:	goto 28
+	  34:	
+	  35:	param t20
+	  36:	t21 = call printStr, 1
+	  37:	
+	  38:	param t22
+	  39:	t23 = call printStr, 1
+	  40:	param sum
+	  41:	t24 = call printInt, 1
+	  42:	t25 = 0
+	  43:	sum = t25
+	  44:	t27 = 1
+	  45:	i = t27
+	  46:	
+	  47:	param t29
+	  48:	t30 = call printStr, 1
+	  49:	
+	  50:	param t31
+	  51:	t32 = call printStr, 1
+	  52:	if i <= n goto 54
+	  53:	goto 59
+	  54:	t33 = sum + i
+	  55:	sum = t33
+	  56:	t35 = i
+	  57:	i = i + 1
+	  58:	goto 52
+	  59:	param sum
+	  60:	t36 = call printInt, 1
+	  61:	t37 = 0
+	  62:	sum = t37
+	  63:	t39 = 1
+	  64:	i = t39
+	  65:	
+	  66:	param t41
+	  67:	t42 = call printStr, 1
+	  68:	
+	  69:	param t43
+	  70:	t44 = call printStr, 1
+	  71:	t45 = sum + i
+	  72:	sum = t45
+	  73:	t47 = i
+	  74:	i = i + 1
+	  75:	if i <= n goto 71
+	  76:	goto 77
+	  77:	param sum
+	  78:	t48 = call printInt, 1
+	  79:	
+	  80:	param t49
+	  81:	t50 = call printStr, 1
+------------------------------

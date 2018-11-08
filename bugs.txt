@@ -1,0 +1,5 @@
+1. Functions can have maximum only 4 parameters as they are being passed through registers.
+2. Pointer dereferencing gives errors or wrong output.
+3. Array features are not working correctly
+4. Functions cannot have return statements inside other blocks like if-else blocks or loops. Returns can be only at the ending of functions.
+5. Division operator is giving syntax error.

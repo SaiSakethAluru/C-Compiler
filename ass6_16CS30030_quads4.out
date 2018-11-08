@@ -1,0 +1,178 @@
+===================================================================================================================
+Symbol Table: Global                                                             Parent: null
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+printStr            integer             function            null           4              0         ptr-to-ST(printStr)
+printInt            integer             function            null           4              4         ptr-to-ST(printInt)
+readInt             integer             function            null           4              8         ptr-to-ST(readInt)
+global_val          integer             local               4              4              12        null
+t00                 integer             temp                4              4              16        null
+sample_void_functionvoid                function            null           0              20        ptr-to-ST(sample_void_function)
+sample_int_function integer             function            null           4              20        ptr-to-ST(sample_int_function)
+main                integer             function            null           4              24        ptr-to-ST(main)
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: printStr                                                           Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+c                   ptr(char)           param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: printInt                                                           Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+i                   integer             param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: readInt                                                            Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+eP                  ptr(integer)        param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: sample_void_function                                               Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+int_var_init        integer             param               null           4              0         null
+elements            integer             param               null           4              4         null
+retVal              void                local               null           0              8         null
+printInt            integer             local               null           4              8         null
+t01                 integer             temp                null           4              12        null
+printStr            integer             local               null           4              16        null
+t02                 ptr(char)           temp                "\n"           4              20        null
+t03                 integer             temp                null           4              24        null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: sample_int_function                                                Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+int_var_init        integer             param               null           4              0         null
+elements            integer             param               null           4              4         null
+value               integer             param               null           4              8         null
+retVal              integer             local               null           4              12        null
+i                   integer             local               null           4              16        null
+passes              integer             local               0              4              20        null
+t04                 integer             temp                0              4              24        null
+t05                 integer             temp                null           4              28        null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: main                                                               Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+retVal              integer             local               null           4              0         null
+int_var_init        integer             local               10             4              4         null
+t06                 integer             temp                10             4              8         null
+int_val_declare     integer             local               null           4              12        null
+array               arr(6, integer)     local               null           24             16        null
+t07                 integer             temp                6              4              40        null
+global_val          integer             local               null           4              44        null
+t08                 integer             temp                5              4              48        null
+t09                 integer             temp                null           4              52        null
+sample_void_functioninteger             local               null           4              56        null
+t10                 integer             temp                10             4              60        null
+t11                 integer             temp                null           4              64        null
+sample_int_function integer             local               null           4              68        null
+t12                 integer             temp                10             4              72        null
+t13                 integer             temp                2              4              76        null
+t14                 integer             temp                null           4              80        null
+t15                 integer             temp                null           4              84        null
+t16                 integer             temp                1              4              88        null
+printStr            integer             local               null           4              92        null
+t17                 ptr(char)           temp                "There was "   4              96        null
+t18                 integer             temp                null           4              100       null
+printInt            integer             local               null           4              104       null
+t19                 integer             temp                null           4              108       null
+t20                 ptr(char)           temp                " pass.\n"     4              112       null
+t21                 integer             temp                null           4              116       null
+t22                 ptr(char)           temp                "There were "  4              120       null
+t23                 integer             temp                null           4              124       null
+t24                 integer             temp                null           4              128       null
+t25                 ptr(char)           temp                " passes.\n"   4              132       null
+t26                 integer             temp                null           4              136       null
+t27                 integer             temp                0              4              140       null
+-------------------------------------------------------------------------------------------------------------------
+
+==============================
+Three address code translation
+------------------------------
+	   0:	t00 = 4
+	   1:	global_val = t00
+
+sample_void_function: 
+
+	   3:	param int_var_init
+	   4:	t01 = call printInt, 1
+	   5:	
+	   6:	param t02
+	   7:	t03 = call printStr, 1
+
+sample_int_function: 
+
+	  10:	t04 = 0
+	  11:	passes = t04
+	  12:	if int_var_init >= value goto 15
+	  13:	goto 18
+	  14:	goto 18
+	  15:	t05 = passes
+	  16:	passes = passes + 1
+	  17:	goto 18
+	  18:	return passes
+
+main: 
+
+	  21:	t06 = 10
+	  22:	int_var_init = t06
+	  23:	t07 = 6
+	  24:	t08 = 5
+	  25:	global_val = t08
+	  26:	param int_var_init
+	  27:	t10 = 10
+	  28:	param t10
+	  29:	t11 = call sample_void_function, 2
+	  30:	param int_var_init
+	  31:	t12 = 10
+	  32:	param t12
+	  33:	t13 = 2
+	  34:	param t13
+	  35:	t14 = call sample_int_function, 3
+	  36:	int_val_declare = t14
+	  37:	t16 = 1
+	  38:	if int_val_declare == t16 goto 41
+	  39:	goto 50
+	  40:	goto 58
+	  41:	
+	  42:	param t17
+	  43:	t18 = call printStr, 1
+	  44:	param int_val_declare
+	  45:	t19 = call printInt, 1
+	  46:	
+	  47:	param t20
+	  48:	t21 = call printStr, 1
+	  49:	goto 58
+	  50:	
+	  51:	param t22
+	  52:	t23 = call printStr, 1
+	  53:	param int_val_declare
+	  54:	t24 = call printInt, 1
+	  55:	
+	  56:	param t25
+	  57:	t26 = call printStr, 1
+	  58:	t27 = 0
+	  59:	return t27
+------------------------------

@@ -1,0 +1,254 @@
+===================================================================================================================
+Symbol Table: Global                                                             Parent: null
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+printInt            integer             function            null           4              0         ptr-to-ST(printInt)
+printStr            integer             function            null           4              4         ptr-to-ST(printStr)
+readInt             integer             function            null           4              8         ptr-to-ST(readInt)
+main                integer             function            null           4              12        ptr-to-ST(main)
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: printInt                                                           Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+num                 integer             param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: printStr                                                           Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+c                   ptr(char)           param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: readInt                                                            Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+eP                  ptr(integer)        param               null           4              0         null
+retVal              integer             local               null           4              4         null
+-------------------------------------------------------------------------------------------------------------------
+
+===================================================================================================================
+Symbol Table: main                                                               Parent: Global
+-------------------------------------------------------------------------------------------------------------------
+Name                Type           Category            Initial Value       Size        Offset      Nested
+-------------------------------------------------------------------------------------------------------------------
+retVal              integer             local               null           4              0         null
+ep                  ptr(integer)        local               null           4              4         null
+a                   arr(5, integer)     local               null           20             8         null
+t00                 integer             temp                5              4              28        null
+i                   integer             local               null           4              32        null
+j                   integer             local               null           4              36        null
+k                   integer             local               null           4              40        null
+r                   integer             local               null           4              44        null
+p                   integer             local               null           4              48        null
+printStr            integer             local               null           4              52        null
+t01                 ptr(char)           temp                ""             4              56        null
+t02                 integer             temp                null           4              60        null
+t03                 ptr(char)           temp                "--------------BUBBLE SORT TEST FILE---------------"4              64        null
+t04                 integer             temp                null           4              68        null
+t05                 ptr(char)           temp                "Here we sort an array of elements"4              72        null
+t06                 integer             temp                null           4              76        null
+t07                 ptr(char)           temp                "using ITERATIVE approach:"4              80        null
+t08                 integer             temp                null           4              84        null
+t09                 ptr(char)           temp                "Enter 5 integers of the array :"4              88        null
+t10                 integer             temp                null           4              92        null
+t11                 integer             temp                0              4              96        null
+t12                 integer             temp                null           4              100       null
+t13                 integer             temp                5              4              104       null
+t14                 integer             temp                null           4              108       null
+readInt             integer             local               null           4              112       null
+t15                 ptr(integer)        temp                null           4              116       null
+t16                 integer             temp                null           4              120       null
+t17                 integer             temp                null           4              124       null
+t18                 ptr(char)           temp                "got "         4              128       null
+t19                 integer             temp                null           4              132       null
+printInt            integer             local               null           4              136       null
+t20                 integer             temp                null           4              140       null
+t21                 ptr(char)           temp                "\n"           4              144       null
+t22                 integer             temp                null           4              148       null
+t23                 integer             temp                null           4              152       null
+t24                 integer             temp                null           4              156       null
+t25                 ptr(char)           temp                "The array fed is :"4              160       null
+t26                 integer             temp                null           4              164       null
+t27                 integer             temp                0              4              168       null
+t28                 integer             temp                null           4              172       null
+t29                 integer             temp                5              4              176       null
+t30                 integer             temp                null           4              180       null
+t31                 integer             temp                null           4              184       null
+t32                 integer             temp                null           4              188       null
+t33                 integer             temp                null           4              192       null
+t34                 integer             temp                null           4              196       null
+t35                 ptr(char)           temp                ""             4              200       null
+t36                 integer             temp                null           4              204       null
+t37                 integer             temp                0              4              208       null
+t38                 integer             temp                null           4              212       null
+t39                 integer             temp                5              4              216       null
+t40                 integer             temp                null           4              220       null
+t41                 integer             temp                0              4              224       null
+t42                 integer             temp                null           4              228       null
+t43                 integer             temp                4              4              232       null
+t44                 integer             temp                null           4              236       null
+t45                 integer             temp                null           4              240       null
+t46                 integer             temp                null           4              244       null
+t47                 integer             temp                null           4              248       null
+t48                 integer             temp                null           4              252       null
+t49                 integer             temp                1              4              256       null
+t50                 integer             temp                null           4              260       null
+t51                 integer             temp                null           4              264       null
+t52                 integer             temp                null           4              268       null
+t53                 integer             temp                null           4              272       null
+t54                 integer             temp                null           4              276       null
+t55                 integer             temp                null           4              280       null
+t56                 integer             temp                1              4              284       null
+t57                 integer             temp                null           4              288       null
+t58                 integer             temp                null           4              292       null
+t59                 integer             temp                null           4              296       null
+t60                 ptr(char)           temp                "The array after sorting is :"4              300       null
+t61                 integer             temp                null           4              304       null
+t62                 integer             temp                0              4              308       null
+t63                 integer             temp                null           4              312       null
+t64                 integer             temp                5              4              316       null
+t65                 integer             temp                null           4              320       null
+t66                 integer             temp                null           4              324       null
+t67                 integer             temp                null           4              328       null
+t68                 integer             temp                null           4              332       null
+t69                 integer             temp                null           4              336       null
+t70                 ptr(char)           temp                ""             4              340       null
+t71                 integer             temp                null           4              344       null
+t72                 integer             temp                0              4              348       null
+-------------------------------------------------------------------------------------------------------------------
+
+==============================
+Three address code translation
+------------------------------
+
+main: 
+
+	   1:	t00 = 5
+	   2:	
+	   3:	param t01
+	   4:	t02 = call printStr, 1
+	   5:	
+	   6:	param t03
+	   7:	t04 = call printStr, 1
+	   8:	
+	   9:	param t05
+	  10:	t06 = call printStr, 1
+	  11:	
+	  12:	param t07
+	  13:	t08 = call printStr, 1
+	  14:	
+	  15:	param t09
+	  16:	t10 = call printStr, 1
+	  17:	t11 = 0
+	  18:	i = t11
+	  19:	t13 = 5
+	  20:	if i < t13 goto 25
+	  21:	goto 40
+	  22:	t14 = i
+	  23:	i = i + 1
+	  24:	goto 19
+	  25:	t15 = &j
+	  26:	param t15
+	  27:	t16 = call readInt, 1
+	  28:	r = t16
+	  29:	
+	  30:	param t18
+	  31:	t19 = call printStr, 1
+	  32:	param r
+	  33:	t20 = call printInt, 1
+	  34:	
+	  35:	param t21
+	  36:	t22 = call printStr, 1
+	  37:	t23 = i * 4
+	  38:	a[t23] = r
+	  39:	goto 22
+	  40:	
+	  41:	param t25
+	  42:	t26 = call printStr, 1
+	  43:	t27 = 0
+	  44:	i = t27
+	  45:	t29 = 5
+	  46:	if i < t29 goto 51
+	  47:	goto 60
+	  48:	t30 = i
+	  49:	i = i + 1
+	  50:	goto 45
+	  51:	t31 = i * 4
+	  52:	t32 = a[t31]
+	  53:	r = t32
+	  54:	param r
+	  55:	t34 = call printInt, 1
+	  56:	
+	  57:	param t35
+	  58:	t36 = call printStr, 1
+	  59:	goto 48
+	  60:	t37 = 0
+	  61:	i = t37
+	  62:	t39 = 5
+	  63:	if i < t39 goto 68
+	  64:	goto 97
+	  65:	t40 = i
+	  66:	i = i + 1
+	  67:	goto 62
+	  68:	t41 = 0
+	  69:	k = t41
+	  70:	t43 = 4
+	  71:	t44 = t43 - i
+	  72:	if k < t44 goto 77
+	  73:	goto 65
+	  74:	t45 = k
+	  75:	k = k + 1
+	  76:	goto 70
+	  77:	t46 = k * 4
+	  78:	t47 = a[t46]
+	  79:	r = t47
+	  80:	t49 = 1
+	  81:	t50 = k + t49
+	  82:	t51 = t50 * 4
+	  83:	t52 = a[t51]
+	  84:	p = t52
+	  85:	if r > p goto 88
+	  86:	goto 74
+	  87:	goto 95
+	  88:	t54 = k * 4
+	  89:	a[t54] = p
+	  90:	t56 = 1
+	  91:	t57 = k + t56
+	  92:	t58 = t57 * 4
+	  93:	a[t58] = r
+	  94:	goto 74
+	  95:	goto 74
+	  96:	goto 65
+	  97:	
+	  98:	param t60
+	  99:	t61 = call printStr, 1
+	 100:	t62 = 0
+	 101:	i = t62
+	 102:	t64 = 5
+	 103:	if i < t64 goto 108
+	 104:	goto 117
+	 105:	t65 = i
+	 106:	i = i + 1
+	 107:	goto 102
+	 108:	t66 = i * 4
+	 109:	t67 = a[t66]
+	 110:	r = t67
+	 111:	param r
+	 112:	t69 = call printInt, 1
+	 113:	
+	 114:	param t70
+	 115:	t71 = call printStr, 1
+	 116:	goto 105
+	 117:	t72 = 0
+	 118:	return t72
+------------------------------
